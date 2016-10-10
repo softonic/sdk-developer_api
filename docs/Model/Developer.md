@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email** | **string** |  | [optional] 
-**id_developer** | **string** |  | 
-**name** | **string** |  | 
-**url** | **string** |  | [optional] 
+**id_developer** | **string** | Developer identifier | 
+**name** | **string** | Developer name | 
+**email** | **string** | Developer email | [optional] 
+**url** | **string** | Developer url | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
