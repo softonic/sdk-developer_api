@@ -102,7 +102,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'http://localhost';
+    protected $host = 'https://developer.sftapi.com';
 
     /**
      * Timeout (second) of the HTTP request, by default set to 0, no timeout
