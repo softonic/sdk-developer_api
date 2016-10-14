@@ -1,6 +1,6 @@
 # Softonic\DeveloperApiSdk\DevelopersApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://developer.sftapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,6 +21,15 @@ List of Developers
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: developer_api_password
+Softonic\DeveloperApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure OAuth2 access token for authorization: developer_api_application
+Softonic\DeveloperApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure OAuth2 access token for authorization: developer_api_implicit
+Softonic\DeveloperApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure OAuth2 access token for authorization: developer_api_access_code
+Softonic\DeveloperApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Softonic\DeveloperApiSdk\Api\DevelopersApi();
 $page = 56; // int | Page of the pagination when listing
@@ -48,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[developer_api_password](../../README.md#developer_api_password), [developer_api_application](../../README.md#developer_api_application), [developer_api_implicit](../../README.md#developer_api_implicit), [developer_api_access_code](../../README.md#developer_api_access_code)
 
 ### HTTP request headers
 
@@ -68,6 +77,15 @@ Fetches a single Developer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: developer_api_password
+Softonic\DeveloperApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure OAuth2 access token for authorization: developer_api_application
+Softonic\DeveloperApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure OAuth2 access token for authorization: developer_api_implicit
+Softonic\DeveloperApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure OAuth2 access token for authorization: developer_api_access_code
+Softonic\DeveloperApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Softonic\DeveloperApiSdk\Api\DevelopersApi();
 $id_developer = "id_developer_example"; // string | Developer identifier
@@ -93,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[developer_api_password](../../README.md#developer_api_password), [developer_api_application](../../README.md#developer_api_application), [developer_api_implicit](../../README.md#developer_api_implicit), [developer_api_access_code](../../README.md#developer_api_access_code)
 
 ### HTTP request headers
 
@@ -113,6 +131,15 @@ Entirely replaces a Developer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: developer_api_password
+Softonic\DeveloperApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure OAuth2 access token for authorization: developer_api_application
+Softonic\DeveloperApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure OAuth2 access token for authorization: developer_api_implicit
+Softonic\DeveloperApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure OAuth2 access token for authorization: developer_api_access_code
+Softonic\DeveloperApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Softonic\DeveloperApiSdk\Api\DevelopersApi();
 $id_developer = "id_developer_example"; // string | Developer identifier
@@ -139,7 +166,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[developer_api_password](../../README.md#developer_api_password), [developer_api_application](../../README.md#developer_api_application), [developer_api_implicit](../../README.md#developer_api_implicit), [developer_api_access_code](../../README.md#developer_api_access_code)
 
 ### HTTP request headers
 
@@ -159,6 +186,15 @@ Partially updates a Developer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: developer_api_password
+Softonic\DeveloperApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure OAuth2 access token for authorization: developer_api_application
+Softonic\DeveloperApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure OAuth2 access token for authorization: developer_api_implicit
+Softonic\DeveloperApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure OAuth2 access token for authorization: developer_api_access_code
+Softonic\DeveloperApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new Softonic\DeveloperApiSdk\Api\DevelopersApi();
 $id_developer = "id_developer_example"; // string | Developer identifier
@@ -185,7 +221,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[developer_api_password](../../README.md#developer_api_password), [developer_api_application](../../README.md#developer_api_application), [developer_api_implicit](../../README.md#developer_api_implicit), [developer_api_access_code](../../README.md#developer_api_access_code)
 
 ### HTTP request headers
 
