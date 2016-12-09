@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **findDeveloper**
-> \Softonic\DeveloperApiSdk\Client\Model\Developer[] findDeveloper($page, $limit)
+> \Softonic\DeveloperApiSdk\Client\Model\Developer[] findDeveloper($page, $limit, $search)
 
 List of Developers
 
@@ -34,9 +34,10 @@ Softonic\DeveloperApiSdk\Configuration::getDefaultConfiguration()->setAccessToke
 $api_instance = new Softonic\DeveloperApiSdk\Api\DevelopersApi();
 $page = 56; // int | Page of the pagination when listing
 $limit = 56; // int | Number of results per page when listing
+$search = "search_example"; // string | Field to search for
 
 try {
-    $result = $api_instance->findDeveloper($page, $limit);
+    $result = $api_instance->findDeveloper($page, $limit, $search);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DevelopersApi->findDeveloper: ', $e->getMessage(), PHP_EOL;
@@ -50,6 +51,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Page of the pagination when listing | [optional]
  **limit** | **int**| Number of results per page when listing | [optional]
+ **search** | **string**| Field to search for | [optional]
 
 ### Return type
 
