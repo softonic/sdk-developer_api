@@ -1,5 +1,6 @@
 {
     "name": "softonic/developer_api_sdk",
+    "version": "v1.0.8",
     "description": "",
     "keywords": [
         "swagger",
