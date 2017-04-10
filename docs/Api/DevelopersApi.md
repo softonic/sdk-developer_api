@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **findDeveloper**
-> \Client\Model\Developer[] findDeveloper($page, $limit, $search)
+> \Softonic\DeveloperApiSdk\Client\Model\Developer[] findDeveloper($page, $limit, $search)
 
 List of Developers
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Client\Model\Developer[]**](../Model/Developer.md)
+[**\Softonic\DeveloperApiSdk\Client\Model\Developer[]**](../Model/Developer.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **readDeveloper**
-> \Client\Model\Developer readDeveloper($id_developer)
+> \Softonic\DeveloperApiSdk\Client\Model\Developer readDeveloper($id_developer)
 
 Fetches a single Developer
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Client\Model\Developer**](../Model/Developer.md)
+[**\Softonic\DeveloperApiSdk\Client\Model\Developer**](../Model/Developer.md)
 
 ### Authorization
 
@@ -145,7 +145,7 @@ Softonic\DeveloperApiSdk\Configuration::getDefaultConfiguration()->setAccessToke
 
 $api_instance = new Softonic\DeveloperApiSdk\Api\DevelopersApi();
 $id_developer = "id_developer_example"; // string | Developer identifier
-$body = new \Client\Model\Developer(); // \Client\Model\Developer | 
+$body = new \Softonic\DeveloperApiSdk\Client\Model\Developer(); // \Softonic\DeveloperApiSdk\Client\Model\Developer | 
 
 try {
     $api_instance->replaceDeveloper($id_developer, $body);
@@ -160,7 +160,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id_developer** | **string**| Developer identifier |
- **body** | [**\Client\Model\Developer**](../Model/\Client\Model\Developer.md)|  | [optional]
+ **body** | [**\Softonic\DeveloperApiSdk\Client\Model\Developer**](../Model/\Softonic\DeveloperApiSdk\Client\Model\Developer.md)|  | [optional]
 
 ### Return type
 
@@ -200,7 +200,7 @@ Softonic\DeveloperApiSdk\Configuration::getDefaultConfiguration()->setAccessToke
 
 $api_instance = new Softonic\DeveloperApiSdk\Api\DevelopersApi();
 $id_developer = "id_developer_example"; // string | Developer identifier
-$body = new \Client\Model\Developer(); // \Client\Model\Developer | 
+$body = new \Softonic\DeveloperApiSdk\Client\Model\Developer(); // \Softonic\DeveloperApiSdk\Client\Model\Developer | 
 
 try {
     $api_instance->updateDeveloper($id_developer, $body);
@@ -215,7 +215,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id_developer** | **string**| Developer identifier |
- **body** | [**\Client\Model\Developer**](../Model/\Client\Model\Developer.md)|  | [optional]
+ **body** | [**\Softonic\DeveloperApiSdk\Client\Model\Developer**](../Model/\Softonic\DeveloperApiSdk\Client\Model\Developer.md)|  | [optional]
 
 ### Return type
 
