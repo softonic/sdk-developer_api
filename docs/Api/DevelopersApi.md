@@ -70,7 +70,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **findDeveloper**
-> \Softonic\DeveloperApiSdk\Client\Model\Developer[] findDeveloper($page, $limit, $search)
+> \Softonic\DeveloperApiSdk\Client\Model\Developer[] findDeveloper($page, $limit, $search, $ids)
 
 List of Developers
 
@@ -99,9 +99,10 @@ $apiInstance = new Softonic\DeveloperApiSdk\Api\DevelopersApi(
 $page = 56; // int | Page of the pagination when listing
 $limit = 56; // int | Number of results per page when listing
 $search = "search_example"; // string | Field to search for
+$ids = array("ids_example"); // string[] | Developer identifiers to search for
 
 try {
-    $result = $apiInstance->findDeveloper($page, $limit, $search);
+    $result = $apiInstance->findDeveloper($page, $limit, $search, $ids);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DevelopersApi->findDeveloper: ', $e->getMessage(), PHP_EOL;
@@ -116,6 +117,7 @@ Name | Type | Description  | Notes
  **page** | **int**| Page of the pagination when listing | [optional]
  **limit** | **int**| Number of results per page when listing | [optional]
  **search** | **string**| Field to search for | [optional]
+ **ids** | [**string[]**](../Model/string.md)| Developer identifiers to search for | [optional]
 
 ### Return type
 
