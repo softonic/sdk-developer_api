@@ -99,7 +99,7 @@ $apiInstance = new Softonic\DeveloperApiSdk\Api\DevelopersApi(
 $page = 56; // int | Page of the pagination when listing
 $limit = 56; // int | Number of results per page when listing
 $search = "search_example"; // string | Field to search for
-$ids = array("ids_example"); // string[] | Developer identifiers to search for
+$ids = "ids_example"; // string | Developer identifiers to search for separated by commas
 
 try {
     $result = $apiInstance->findDeveloper($page, $limit, $search, $ids);
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
  **page** | **int**| Page of the pagination when listing | [optional]
  **limit** | **int**| Number of results per page when listing | [optional]
  **search** | **string**| Field to search for | [optional]
- **ids** | [**string[]**](../Model/string.md)| Developer identifiers to search for | [optional]
+ **ids** | **string**| Developer identifiers to search for separated by commas | [optional]
 
 ### Return type
 
