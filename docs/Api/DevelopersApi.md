@@ -1,6 +1,6 @@
 # Softonic\DeveloperApiSdk\DevelopersApi
 
-All URIs are relative to *https://developer.eu-west.sftapi.com*
+All URIs are relative to *https://developer.sftapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
