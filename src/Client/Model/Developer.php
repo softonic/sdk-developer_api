@@ -204,6 +204,16 @@ class Developer implements ModelInterface, ArrayAccess, JsonSerializable
     }
 
     /**
+     * Returns true if all attributes are set. False otherwise.
+     *
+     * @return boolean
+     */
+    public function hasAllAttributesSet()
+    {
+        return count($this->container) === count(self::$attributeMap);
+    }
+
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -215,26 +225,45 @@ class Developer implements ModelInterface, ArrayAccess, JsonSerializable
         if (array_key_exists('id_developer', $this->container) && $this->container['id_developer'] === null) {
             $invalidProperties[] = "'id_developer' can't be null";
         }
-        if (array_key_exists('id_developer', $this->container) && !preg_match("/^[a-z0-9]+(?:-[a-z0-9]+)*$/", $this->container['id_developer'])) {
+        if (!preg_match("/^[a-z0-9]+(?:-[a-z0-9]+)*$/", $this->container['id_developer'])) {
             $invalidProperties[] = "invalid value for 'id_developer', must be conform to the pattern /^[a-z0-9]+(?:-[a-z0-9]+)*$/.";
         }
 
         if (array_key_exists('name', $this->container) && $this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
-        if (array_key_exists('name', $this->container) && (strlen($this->container['name']) > 100)) {
+        if ((strlen($this->container['name']) > 100)) {
             $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 100.";
         }
 
-        if (array_key_exists('email', $this->container) && ($this->container['email'] !== null) && (strlen($this->container['email']) > 200)) {
+        if (($this->container['email'] !== null) && (strlen($this->container['email']) > 200)) {
             $invalidProperties[] = "invalid value for 'email', the character length must be smaller than or equal to 200.";
         }
 
-        if (array_key_exists('url', $this->container) && ($this->container['url'] !== null) && (strlen($this->container['url']) > 200)) {
+        if (($this->container['url'] !== null) && (strlen($this->container['url']) > 200)) {
             $invalidProperties[] = "invalid value for 'url', the character length must be smaller than or equal to 200.";
         }
 
         return $invalidProperties;
+    }
+
+    /**
+     * Validate all the properties in the model ensuring the required ones are set
+     * return true if all passed
+     *
+     * @return bool True if all properties are valid
+     */
+    public function valid()
+    {
+
+        if ($this->offsetGet('id_developer') === null) {
+            return false;
+        }
+        if ($this->offsetGet('name') === null) {
+            return false;
+        }
+
+        return $this->validProperties();
     }
 
     /**
@@ -243,7 +272,7 @@ class Developer implements ModelInterface, ArrayAccess, JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid()
+    public function validProperties()
     {
 
         if (array_key_exists('id_developer', $this->container) && $this->container['id_developer'] === null) {
