@@ -304,7 +304,7 @@ class Developer implements ModelInterface, ArrayAccess, JsonSerializable
      */
     public function getIdDeveloper()
     {
-        return $this->container['id_developer'];
+        return array_key_exists('id_developer', $this->container) ? $this->container['id_developer'] : null;
     }
 
     /**
@@ -333,7 +333,7 @@ class Developer implements ModelInterface, ArrayAccess, JsonSerializable
      */
     public function getName()
     {
-        return $this->container['name'];
+        return array_key_exists('name', $this->container) ? $this->container['name'] : null;
     }
 
     /**
@@ -361,7 +361,7 @@ class Developer implements ModelInterface, ArrayAccess, JsonSerializable
      */
     public function getEmail()
     {
-        return $this->container['email'];
+        return array_key_exists('email', $this->container) ? $this->container['email'] : null;
     }
 
     /**
@@ -389,7 +389,7 @@ class Developer implements ModelInterface, ArrayAccess, JsonSerializable
      */
     public function getUrl()
     {
-        return $this->container['url'];
+        return array_key_exists('url', $this->container) ? $this->container['url'] : null;
     }
 
     /**
@@ -496,15 +496,17 @@ class Developer implements ModelInterface, ArrayAccess, JsonSerializable
      *
      * @return array
      */
-    public function toArray($getAllAttributes = self::GET_ALL_ATTRIBUTES)
+    public function toArray($getAllAttributes = self::GET_SET_ATTRIBUTES)
     {
         if (!$getAllAttributes) {
             return $this->container;
         }
 
-        foreach (self::$attributeMap as $attribute) {
-            $data[$attribute] = $this->container[$attribute] ?? null;
-        }
+        $data = [];
+        $data['id_developer'] = $this->getIdDeveloper();
+        $data['name'] = $this->getName();
+        $data['email'] = $this->getEmail();
+        $data['url'] = $this->getUrl();
 
         return $data;
     }
