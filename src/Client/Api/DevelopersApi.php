@@ -35,7 +35,6 @@ use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Softonic\DeveloperApiSdk\ApiException;
-use Softonic\DeveloperApiSdk\Client\Model\ModelInterface;
 use Softonic\DeveloperApiSdk\Configuration;
 use Softonic\DeveloperApiSdk\HeaderSelector;
 use Softonic\DeveloperApiSdk\ObjectSerializer;
@@ -254,9 +253,6 @@ class DevelopersApi
             // \stdClass has no __toString(), so we should encode it manually
             if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-            elseif ($httpBody instanceof ModelInterface && $headers['Content-Type'] === 'application/json') {
-                $httpBody = $httpBody->toArray(true);
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1102,9 +1098,6 @@ class DevelopersApi
             // \stdClass has no __toString(), so we should encode it manually
             if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-            elseif ($httpBody instanceof ModelInterface && $headers['Content-Type'] === 'application/json') {
-                $httpBody = $httpBody->toArray(true);
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
