@@ -206,7 +206,7 @@ class Developer implements ModelInterface, ArrayAccess, JsonSerializable
     /**
      * Returns true if all attributes are set. False otherwise.
      *
-     * @return boolean
+     * @return bool
      */
     public function hasAllAttributesSet()
     {
@@ -222,14 +222,14 @@ class Developer implements ModelInterface, ArrayAccess, JsonSerializable
     {
         $invalidProperties = [];
 
-        if (array_key_exists('id_developer', $this->container) && $this->container['id_developer'] === null) {
+        if ($this->container['id_developer'] === null) {
             $invalidProperties[] = "'id_developer' can't be null";
         }
         if (!preg_match("/^[a-z0-9]+(?:-[a-z0-9]+)*$/", $this->container['id_developer'])) {
             $invalidProperties[] = "invalid value for 'id_developer', must be conform to the pattern /^[a-z0-9]+(?:-[a-z0-9]+)*$/.";
         }
 
-        if (array_key_exists('name', $this->container) && $this->container['name'] === null) {
+        if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
         if ((strlen($this->container['name']) > 100)) {
@@ -304,7 +304,7 @@ class Developer implements ModelInterface, ArrayAccess, JsonSerializable
      */
     public function getIdDeveloper()
     {
-        return $this->container['id_developer'];
+        return array_key_exists('id_developer', $this->container) ? $this->container['id_developer'] : null;
     }
 
     /**
@@ -333,7 +333,7 @@ class Developer implements ModelInterface, ArrayAccess, JsonSerializable
      */
     public function getName()
     {
-        return $this->container['name'];
+        return array_key_exists('name', $this->container) ? $this->container['name'] : null;
     }
 
     /**
@@ -361,7 +361,7 @@ class Developer implements ModelInterface, ArrayAccess, JsonSerializable
      */
     public function getEmail()
     {
-        return $this->container['email'];
+        return array_key_exists('email', $this->container) ? $this->container['email'] : null;
     }
 
     /**
@@ -373,7 +373,7 @@ class Developer implements ModelInterface, ArrayAccess, JsonSerializable
      */
     public function setEmail($email)
     {
-        if (!is_null($email) && (strlen($email) > 200)) {
+        if (($email !== null) && (strlen($email) > 200)) {
             throw new \InvalidArgumentException('invalid length for $email when calling Developer., must be smaller than or equal to 200.');
         }
 
@@ -389,7 +389,7 @@ class Developer implements ModelInterface, ArrayAccess, JsonSerializable
      */
     public function getUrl()
     {
-        return $this->container['url'];
+        return array_key_exists('url', $this->container) ? $this->container['url'] : null;
     }
 
     /**
@@ -401,7 +401,7 @@ class Developer implements ModelInterface, ArrayAccess, JsonSerializable
      */
     public function setUrl($url)
     {
-        if (!is_null($url) && (strlen($url) > 200)) {
+        if (($url !== null) && (strlen($url) > 200)) {
             throw new \InvalidArgumentException('invalid length for $url when calling Developer., must be smaller than or equal to 200.');
         }
 
@@ -414,7 +414,7 @@ class Developer implements ModelInterface, ArrayAccess, JsonSerializable
      *
      * @param integer $offset Offset
      *
-     * @return boolean
+     * @return bool
      */
     public function offsetExists($offset)
     {
@@ -430,7 +430,7 @@ class Developer implements ModelInterface, ArrayAccess, JsonSerializable
      */
     public function offsetGet($offset)
     {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return $this->container[$offset] ?? null;
     }
 
     /**
@@ -443,7 +443,7 @@ class Developer implements ModelInterface, ArrayAccess, JsonSerializable
      */
     public function offsetSet($offset, $value)
     {
-        if (is_null($offset)) {
+        if (null === $offset) {
             $this->container[] = $value;
         } else {
             $this->container[$offset] = $value;
@@ -496,15 +496,17 @@ class Developer implements ModelInterface, ArrayAccess, JsonSerializable
      *
      * @return array
      */
-    public function toArray($getAllAttributes = self::GET_ALL_ATTRIBUTES)
+    public function toArray($getAllAttributes = self::GET_SET_ATTRIBUTES)
     {
         if (!$getAllAttributes) {
             return $this->container;
         }
 
-        foreach (self::$attributeMap as $attribute) {
-            $data[$attribute] = $this->container[$attribute] ?? null;
-        }
+        $data = [];
+        $data['id_developer'] = $this->getIdDeveloper();
+        $data['name'] = $this->getName();
+        $data['email'] = $this->getEmail();
+        $data['url'] = $this->getUrl();
 
         return $data;
     }
